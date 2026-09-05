@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research by Tu Li, Economics, University of Arizona.">
+  <meta name="description" content="Research by Tu Li, Economics, University of Arizona. Working paper on penalized and debiased GMM and moment selection; abandoned projects on fixed effects estimation and electrification.">
   <meta name="author" content="Tu Li">
   <meta name="color-scheme" content="light">
   <title>Research | Tu Li</title>
@@ -25,13 +25,23 @@
     <h1>Research</h1>
     <section class="research-section" aria-labelledby="working-paper">
       <h2 id="working-paper">Working Paper</h2>
-      <!-- Replace the placeholder below with your working paper title and description. -->
-      <p class="placeholder">To be added.</p>
+      <article aria-labelledby="moment-selection-paper">
+        <!-- When the PDF is ready, link this title to papers/moment_selection.pdf. -->
+        <h3 id="moment-selection-paper">Penalized and Debiased GMM with Potentially Invalid Moment Conditions</h3>
+        <p><strong>Abstract.</strong> This paper proposes a penalized debiased generalized method of moments (PDG) procedure for estimation and moment selection when candidate moment conditions may be invalid and the moment functions depend on first-step nonparametric or machine-learning estimators. We assume that a set of valid baseline moments identifies the parameter of interest, while additional candidate moments may improve estimation precision when valid. To account for the plug-in step bias, we construct the orthogonal and cross-fitted sample debiased moments for potentially invalid moments, building on Chernozhukov et al. (2022). We show that the proposed procedure has oracle-like properties: it consistently selects the correct moment conditions, and its asymptotic distribution is the same as that of the infeasible oracle GMM, even when the moments contain estimated first-step components, for a fixed data-generating process. The simulation results show that PDG accurately recovers the invalid set while exhibiting finite-sample shrinkage bias, and that the post-selection PDG, which we recommend for final estimation and inference, has negligible bias and provides substantial variance reductions relative to baseline-only GMM.</p>
+      </article>
     </section>
     <section class="research-section" aria-labelledby="abandoned-project">
-      <h2 id="abandoned-project">Abandoned Project</h2>
-      <!-- Replace the placeholder below with your abandoned project title and description. -->
-      <p class="placeholder">To be added.</p>
+      <h2 id="abandoned-project">Abandoned Projects</h2>
+      <!-- Each paper links to a PDF in the papers folder beside this page. -->
+      <article aria-labelledby="fixed-effects-paper">
+        <h3 id="fixed-effects-paper"><a href="papers/sparse_fixed_effects.pdf">Weighted Regularization in Fixed Effects Panel Model: Convergence Rate and Oracle Property</a> <span class="file-type">(PDF)</span></h3>
+        <p><strong>Abstract.</strong> In this paper, we study a weighted &#8467;<sub>1</sub>-penalized fixed effects estimator for the classical linear panel data model and investigate its theoretical properties. The proposed estimator minimizes the sum of squared residuals plus an &#8467;<sub>1</sub>-penalty on the fixed effects, weighted by a preliminary estimate of these effects. We derive a non-asymptotic &#8467;<sub>2</sub>-error bound for the estimator and show that it is asymptotically normal, with the same mean and variance as if the true model were known in advance, under suitable restrictions on the growth rate of the number of significant parameters. Our study extends the results of Huang et al. (2008b) to a panel data setting, albeit under some restrictive assumptions. To complement the theoretical findings, we provide simulation evidence and revisit the empirical analysis of Donohue III and Levitt (2001) to illustrate a real-world application.</p>
+      </article>
+      <article aria-labelledby="electrification-paper">
+        <h3 id="electrification-paper"><a href="papers/electrification.pdf">The Impact of Electrification on Labor Productivity: Evidence from the Early 20th Century United States</a> <span class="file-type">(PDF)</span></h3>
+        <p><strong>Abstract.</strong> In this paper, I study the short-run impact of electrification on labor productivity in the U.S. during the period from 1910 to 1920, exploiting cross-county variation in electrical capacity. Using a fixed effects model, I estimate that a 1 percent increase in electric capacity leads to an approximate 12 percent increase in labor productivity, measured by total output per labor. Additionally, I find that electrification increased capital intensity, with a 1 percent increase in electric capacity resulting in a 10 percent rise in capital per labor. My estimates show no significant correlation between electrification and the capital-output ratio.</p>
+      </article>
     </section>
     </main>
     <footer class="site-footer">University of Arizona · Economics</footer>
