@@ -46,6 +46,8 @@ p { margin: 0 0 20px; }
 .cv-link { margin: 28px 0 0; }
 .cv-link a { font-weight: bold; }
 .file-type { font-size: 16px; font-weight: normal; }
+.paper-links { font-size: 16px; font-weight: normal; }
+.paper-links a { white-space: nowrap; }
 .research-section { margin-top: 30px; }
 .placeholder { color: var(--muted); }
 .course + .course { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--rule); }
