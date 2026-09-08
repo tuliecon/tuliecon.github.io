@@ -1,0 +1,6 @@
+# Publish the website and its central maintenance guide.
+# Other root folders (including CV sources, backups, and temporary files) stay local.
+/*
+!/.gitignore
+!/README-PERSONAL-WEBSITE.md
+!/docs/
