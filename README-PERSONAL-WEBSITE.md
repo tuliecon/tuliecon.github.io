@@ -2,7 +2,7 @@
 
 This is the central guide for updating my personal academic website and CV. Keep it beside `docs` and `cv_sept26`, and update it when their files or maintenance steps change.
 
-Updated September 7, 2026.
+Updated September 8, 2026.
 
 - **Public website:** [tuliecon.github.io](https://tuliecon.github.io)
 - **GitHub repository:** [tuliecon/tuliecon.github.io](https://github.com/tuliecon/tuliecon.github.io)
@@ -73,7 +73,7 @@ All paths below are inside the local `docs` folder.
 | File or folder | What it contains |
 |---|---|
 | `index.html` | Home: fifth-year PhD introduction, research interests, current working paper link, email, photo, and CV link. The biography begins directly, with no greeting heading; education before the PhD is omitted. Browser title: "Tu Li \| Economics PhD Student, University of Arizona." |
-| `research.html` | Working paper title and abstract; two abandoned projects with abstracts, **(No longer active)** labels, and separate **[Draft]** PDF links. |
+| `research.html` | Working paper title, abstract, and **[Draft]** link to `papers/sms.pdf`; two abandoned projects with abstracts, **(No longer active)** labels, and separate **[Draft]** PDF links. |
 | `teaching.html` | One compact entry per course: **ECON 453: Data Analytics and Modeling: Quantitative Analysis for Economic Strategy**, **Fall 2026; Spring 2026**, with both syllabi, **Evaluation (Spring 2026)**, and Slides 1-14; **ECON 330: Macroeconomic and Global Institutions and Policy**, **Summer 2026; Summer 2025**, with both syllabi. |
 | `econometrics-notes.html` | "Notes will be added here." No note PDFs yet. |
 | `style.css` | Appearance shared by all four pages. |
@@ -137,39 +137,43 @@ The current PDF filenames are:
 
 | Paper | File in the local docs folder |
 |---|---|
+| Penalized and Debiased GMM with Potentially Invalid Moment Conditions | `papers/sms.pdf` |
 | Weighted Regularization in Fixed Effects Panel Model: Convergence Rate and Oracle Property | `papers/sparse_fixed_effects.pdf` |
 | The Impact of Electrification on Labor Productivity: Evidence from the Early 20th Century United States | `papers/electrification.pdf` |
 
-To replace either PDF, keep its filename, replace the local copy, then publish using the usual workflow. To change a title, abstract, or status label, include edits to `docs/research.html` too. For manual uploads, the PDFs belong inside `docs/papers` on GitHub.
+To replace a PDF, keep its filename, replace the local copy, then publish using the usual workflow. To change a title, abstract, or status label, include edits to `docs/research.html` too. For manual uploads, the PDFs belong inside `docs/papers` on GitHub.
 
-### Add the moment selection PDF when it is ready
+### Update the moment selection draft
 
-**Penalized and Debiased GMM with Potentially Invalid Moment Conditions** already appears under Working Paper, with the title and full abstract copied from my CV. It has no PDF link yet.
+**Penalized and Debiased GMM with Potentially Invalid Moment Conditions** appears under Working Paper, with the title and full abstract copied from my CV and a separate **[Draft]** link to `docs/papers/sms.pdf`.
 
-The homepage links directly to this description using `research.html#moment-selection-paper`. Keep that heading's `id` when adding the PDF link. If the paper title changes, update its wording on both Home and Research.
+The permanent latest-draft URL is [https://tuliecon.github.io/papers/sms.pdf](https://tuliecon.github.io/papers/sms.pdf). Keep the public filename `sms.pdf` for every revision so existing shared links serve the latest published draft.
 
-1. Save the new PDF locally as `docs/papers/moment_selection.pdf`.
-2. Open `docs/research.html` in a text editor. Find the line beginning `<h3 id="moment-selection-paper">` and replace that complete line with:
+1. Optionally keep a dated copy of the previous draft outside `docs`, such as `backups/papers/sms_2026-09-08.pdf`, using that draft's date. These archive copies stay local.
+2. Replace `docs/papers/sms.pdf` with the updated PDF and review it.
+3. Publish the replacement using the usual Git workflow, then check the public **[Draft]** link after deployment. The existing **[Draft]** link stays the same; edit `research.html` only if its text also needs updating.
+
+The Research heading and draft link are:
 
 ```html
-<h3 id="moment-selection-paper">Penalized and Debiased GMM with Potentially Invalid Moment Conditions <span class="paper-links"><a href="papers/moment_selection.pdf">[Draft]</a></span></h3>
+<h3 id="moment-selection-paper">Penalized and Debiased GMM with Potentially Invalid Moment Conditions <span class="paper-links"><a href="papers/sms.pdf">[Draft]</a></span></h3>
 ```
 
-3. Preview the Research page and click **[Draft]** to check the PDF. Publish the changed `research.html` and the new PDF together using the usual workflow. After deployment, check the public **[Draft]** link.
+The homepage continues to link to the description using `research.html#moment-selection-paper`. Keep that heading's `id`. If the paper title changes, update its wording on both Home and Research.
 
 For another paper, copy a complete `<article>...</article>` block into the appropriate Research section. Change the plain-text title, abstract, and separate file links. Give the heading a unique `id`, and use that same value in the article's `aria-labelledby`. Use an abandoned-project status label only for projects I no longer work on. Add a file link once the file exists.
 
 To add slides or replication materials, save the actual files in `docs/papers` and append links inside the same `paper-links` span. For example, once all three example files exist:
 
 ```html
-<span class="paper-links"><a href="papers/moment_selection.pdf">[Draft]</a> <a href="papers/moment_selection_slides.pdf">[Slides]</a> <a href="papers/moment_selection_replication.zip">[Replication]</a></span>
+<span class="paper-links"><a href="papers/sms.pdf">[Draft]</a> <a href="papers/sms_slides.pdf">[Slides]</a> <a href="papers/sms_replication.zip">[Replication]</a></span>
 ```
 
 Use the real filenames, or the full address of an existing external resource. Publish the changed `research.html` and new files together, preserving their paths under `docs/papers`. Do not add empty links or links to files that are not ready.
 
 ### Share a paper with others
 
-Click **[Draft]** beside a paper on the live Research page and copy the PDF's address from the browser to share in an email or presentation. For example, use the [fixed effects paper link](https://tuliecon.github.io/papers/sparse_fixed_effects.pdf). A file path on my computer is only a local preview. Replacing a published PDF at the same path keeps its shared address working and serves the new version.
+Click **[Draft]** beside a paper on the live Research page and copy the PDF's address from the browser to share in an email or presentation. For the moment selection paper, use the [permanent latest-draft link](https://tuliecon.github.io/papers/sms.pdf). In a LaTeX document using `hyperref`, the same link is `\href{https://tuliecon.github.io/papers/sms.pdf}{Click here for the latest version}`. A file path on my computer is only a local preview. Replacing a published PDF at the same path keeps its shared address working and serves the new version.
 
 ## Update teaching materials or add a course
 
