@@ -2,7 +2,7 @@
 
 This is the central guide for updating my personal academic website and CV. Keep it beside `docs` and `cv_sept26`, and update it when their files or maintenance steps change.
 
-Updated September 8, 2026.
+Updated September 10, 2026.
 
 - **Public website:** [tuliecon.github.io](https://tuliecon.github.io)
 - **GitHub repository:** [tuliecon/tuliecon.github.io](https://github.com/tuliecon/tuliecon.github.io)
@@ -73,7 +73,7 @@ All paths below are inside the local `docs` folder.
 | File or folder | What it contains |
 |---|---|
 | `index.html` | Home: fifth-year PhD introduction, research interests, current working paper link, email, photo, and CV link. The biography begins directly, with no greeting heading; education before the PhD is omitted. Browser title: "Tu Li \| Economics PhD Student, University of Arizona." |
-| `research.html` | Working paper title, abstract, and **[Draft]** link to `papers/sms.pdf`; two abandoned projects with abstracts, **(No longer active)** labels, and separate **[Draft]** PDF links. |
+| `research.html` | Working paper title, abstract, **[Draft]** link to `papers/sms.pdf`, and **[Slides]** link to `papers/sms_slides.pdf`; two abandoned projects with abstracts, **(No longer active)** labels, and separate **[Draft]** PDF links. |
 | `teaching.html` | One compact entry per course: **ECON 453: Data Analytics and Modeling: Quantitative Analysis for Economic Strategy**, **Fall 2026; Spring 2026**, with both syllabi, **Evaluation (Spring 2026)**, and Slides 1-14; **ECON 330: Macroeconomic and Global Institutions and Policy**, **Summer 2026; Summer 2025**, with both syllabi. |
 | `econometrics-notes.html` | "Notes will be added here." No note PDFs yet. |
 | `style.css` | Appearance shared by all four pages. |
@@ -135,35 +135,37 @@ Paper titles are plain text. Available files are linked separately as **[Draft]*
 
 The current PDF filenames are:
 
-| Paper | File in the local docs folder |
+| Paper | Files in the local docs folder |
 |---|---|
-| Penalized and Debiased GMM with Potentially Invalid Moment Conditions | `papers/sms.pdf` |
+| Penalized and Debiased GMM with Potentially Invalid Moment Conditions | Draft: `papers/sms.pdf`; Slides: `papers/sms_slides.pdf` |
 | Weighted Regularization in Fixed Effects Panel Model: Convergence Rate and Oracle Property | `papers/sparse_fixed_effects.pdf` |
 | The Impact of Electrification on Labor Productivity: Evidence from the Early 20th Century United States | `papers/electrification.pdf` |
 
 To replace a PDF, keep its filename, replace the local copy, then publish using the usual workflow. To change a title, abstract, or status label, include edits to `docs/research.html` too. For manual uploads, the PDFs belong inside `docs/papers` on GitHub.
 
-### Update the moment selection draft
+### Update the moment selection draft or slides
 
-**Penalized and Debiased GMM with Potentially Invalid Moment Conditions** appears under Working Paper, with the title and full abstract copied from my CV and a separate **[Draft]** link to `docs/papers/sms.pdf`.
+**Penalized and Debiased GMM with Potentially Invalid Moment Conditions** appears under Working Paper, with the title and full abstract copied from my CV, followed by **[Draft]** linking to `docs/papers/sms.pdf` and **[Slides]** linking to `docs/papers/sms_slides.pdf`.
 
 The permanent latest-draft URL is [https://tuliecon.github.io/papers/sms.pdf](https://tuliecon.github.io/papers/sms.pdf). Keep the public filename `sms.pdf` for every revision so existing shared links serve the latest published draft.
 
-1. Optionally keep a dated copy of the previous draft outside `docs`, such as `backups/papers/sms_2026-09-08.pdf`, using that draft's date. These archive copies stay local.
-2. Replace `docs/papers/sms.pdf` with the updated PDF and review it.
-3. Publish the replacement using the usual Git workflow, then check the public **[Draft]** link after deployment. The existing **[Draft]** link stays the same; edit `research.html` only if its text also needs updating.
+The permanent slides URL is [https://tuliecon.github.io/papers/sms_slides.pdf](https://tuliecon.github.io/papers/sms_slides.pdf). Keep the public filename `sms_slides.pdf` for future slide revisions as well.
 
-The Research heading and draft link are:
+1. Optionally keep a dated copy of the previous PDF outside `docs`, such as `backups/papers/sms_2026-09-08.pdf`, using that version's date. These archive copies stay local.
+2. Replace `docs/papers/sms.pdf` for a new draft, or `docs/papers/sms_slides.pdf` for new slides, and review the updated PDF.
+3. Publish the replacement using the usual Git workflow, then check the corresponding public **[Draft]** or **[Slides]** link after deployment. Both links stay the same; edit `research.html` only if its text also needs updating.
+
+The Research heading and current links are:
 
 ```html
-<h3 id="moment-selection-paper">Penalized and Debiased GMM with Potentially Invalid Moment Conditions <span class="paper-links"><a href="papers/sms.pdf">[Draft]</a></span></h3>
+<h3 id="moment-selection-paper">Penalized and Debiased GMM with Potentially Invalid Moment Conditions <span class="paper-links"><a href="papers/sms.pdf">[Draft]</a> <a href="papers/sms_slides.pdf">[Slides]</a></span></h3>
 ```
 
 The homepage continues to link to the description using `research.html#moment-selection-paper`. Keep that heading's `id`. If the paper title changes, update its wording on both Home and Research.
 
 For another paper, copy a complete `<article>...</article>` block into the appropriate Research section. Change the plain-text title, abstract, and separate file links. Give the heading a unique `id`, and use that same value in the article's `aria-labelledby`. Use an abandoned-project status label only for projects I no longer work on. Add a file link once the file exists.
 
-To add slides or replication materials, save the actual files in `docs/papers` and append links inside the same `paper-links` span. For example, once all three example files exist:
+The draft and slides are available now. To add replication materials later, first save the actual file as `docs/papers/sms_replication.zip`, then append **[Replication]** inside the same `paper-links` span. Use this example only once that file exists:
 
 ```html
 <span class="paper-links"><a href="papers/sms.pdf">[Draft]</a> <a href="papers/sms_slides.pdf">[Slides]</a> <a href="papers/sms_replication.zip">[Replication]</a></span>
