@@ -72,7 +72,7 @@ All paths below are inside the local `docs` folder.
 
 | File or folder | What it contains |
 |---|---|
-| `index.html` | Home: fifth-year PhD introduction, research interests, current working paper link, email, photo, and CV link. The biography begins directly, with no greeting heading; education before the PhD is omitted. Browser title: "Tu Li \| Economics PhD Student, University of Arizona." |
+| `index.html` | Home: fifth-year PhD introduction, research interests, current working paper link, email, photo, and CV link. The biography begins directly, with no greeting heading; education before the PhD is omitted. Browser title and `og:title`: "Tu Li, Economics PhD Student". |
 | `research.html` | Working paper title, abstract, **[Draft]** link to `papers/sms.pdf`, and **[Slides]** link to `papers/sms_slides.pdf`; two abandoned projects with abstracts, **(No longer active)** labels, and separate **[Draft]** PDF links. |
 | `teaching.html` | One compact entry per course: **ECON 453: Data Analytics and Modeling: Quantitative Analysis for Economic Strategy**, **Fall 2026; Spring 2026**, with both syllabi, **Evaluation (Spring 2026)**, and Slides 1-14; **ECON 330: Macroeconomic and Global Institutions and Policy**, **Summer 2026; Summer 2025**, with both syllabi. |
 | `econometrics-notes.html` | "Notes will be added here." No note PDFs yet. |
@@ -227,7 +227,11 @@ To add a course:
 
 ## Google Search Console and indexing
 
-**Status, September 27, 2026:** The homepage now includes my Google Search Console verification tag. Keep that tag in `docs/index.html`. The remaining account steps are to click **Verify** in Search Console, inspect the homepage, request indexing, and submit `sitemap.xml`; their completion has not yet been confirmed.
+**Status, September 27, 2026:** Ownership is verified, homepage indexing has been requested, and `sitemap.xml` has been submitted. The homepage now appears in Google for "Tu Li econ". The latest reported sitemap status was **Couldn't fetch**, despite successful Google live URL tests; its final processing status has not been confirmed. Keep the Google verification tag in `docs/index.html`.
+
+The homepage's `<title>` and `og:title` both say **Tu Li, Economics PhD Student**, with the name first. These express the preferred search title. Google generates its title from several sources and must recrawl and reprocess the page after changes, so the exact displayed wording is not guaranteed. After publishing a title change, request a homepage recrawl through URL Inspection below. [Google's title link guidance](https://developers.google.com/search/docs/appearance/title-link)
+
+Setup and recheck steps:
 
 1. Sign in to [Google Search Console](https://search.google.com/search-console/) and add a **URL-prefix** property for `https://tuliecon.github.io/`.
 2. Choose **HTML tag** verification and copy the complete meta tag Google provides. Give that tag to the assistant to add inside `<head>` in `docs/index.html` and publish. Once it appears in the live homepage's source, return to Search Console and click **Verify**. Keep the tag in future versions of the homepage. [Google's ownership verification guide](https://support.google.com/webmasters/answer/9008080)
