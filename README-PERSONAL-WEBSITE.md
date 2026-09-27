@@ -2,7 +2,7 @@
 
 This is the central guide for updating my personal academic website and CV. Keep it beside `docs` and `cv_sept26`, and update it when their files or maintenance steps change.
 
-Updated September 10, 2026.
+Updated September 27, 2026.
 
 - **Public website:** [tuliecon.github.io](https://tuliecon.github.io)
 - **GitHub repository:** [tuliecon/tuliecon.github.io](https://github.com/tuliecon/tuliecon.github.io)
@@ -83,6 +83,8 @@ All paths below are inside the local `docs` folder.
 | `econ453/` | 17 linked teaching PDFs: Fall 2026 and Spring 2026 syllabi, Spring 2026 evaluation, and Slides 1-14; plus the legacy `syllabus_tu.pdf` copy to preserve its public URL. |
 | `econ330/` | 2 teaching PDFs: Summer 2026 and Summer 2025 syllabi. |
 | `.nojekyll` | Marker for publishing ordinary HTML; keep this file. |
+| `robots.txt` | Permits crawling and points search engines to `https://tuliecon.github.io/sitemap.xml`. |
+| `sitemap.xml` | Lists the four preferred HTML page URLs: Home, Research, Teaching, and Econometrics Notes. |
 
 The folders `cv_sept26`, `backups`, and `tmp` are outside the published website and excluded from Git. Original CV source material is kept in `cv_sept26/archive`; use `cv_sept26/cv.tex` for current edits. The CV instructions below are maintained here together with the website instructions.
 
@@ -222,6 +224,19 @@ To add a course:
 ```
 
 3. Preview the page, then publish the changed `econometrics-notes.html` and the `notes` folder together using the usual workflow.
+
+## Google Search Console and indexing
+
+**Status, September 27, 2026:** Search Console setup still needs my Google account's verification tag and the account steps below. Ownership verification and an indexing request have not been completed.
+
+1. Sign in to [Google Search Console](https://search.google.com/search-console/) and add a **URL-prefix** property for `https://tuliecon.github.io/`.
+2. Choose **HTML tag** verification and copy the complete meta tag Google provides. Give that tag to the assistant to add inside `<head>` in `docs/index.html` and publish. Once it appears in the live homepage's source, return to Search Console and click **Verify**. Keep the tag in future versions of the homepage. [Google's ownership verification guide](https://support.google.com/webmasters/answer/9008080)
+3. Use **URL Inspection** for `https://tuliecon.github.io/`, run **Test live URL**, and review any reported problems. If the live page can be indexed, select **Request indexing**.
+4. Open **Sitemaps** and submit `sitemap.xml`, which is served at `https://tuliecon.github.io/sitemap.xml`. Inspect `https://tuliecon.github.io/research.html` and request indexing there as needed. Google controls when and whether pages are indexed; a request does not guarantee inclusion. [Google's recrawl instructions](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)
+
+The crawl files help discovery; their previous absence does not establish why the site was missing from search. To check status, use Search Console's URL Inspection. A Google search such as `site:tuliecon.github.io` has **no space after the colon**, and its results are not an exhaustive list of indexed pages. [Google's site search documentation](https://developers.google.com/search/docs/monitor-debug/search-operators/all-search-site)
+
+Each HTML page has an absolute `<link rel="canonical">` identifying its preferred public URL. Home uses `https://tuliecon.github.io/`; the other pages use their `.html` URLs. Keep these consistent with `sitemap.xml`. When adding an HTML page, add its preferred URL to the sitemap and its canonical tag to the page. If the domain changes, update all canonical URLs, sitemap URLs, and the sitemap address in `robots.txt` together. The sitemap currently omits `lastmod`; do not add guessed update dates.
 
 ## Publishing settings and quick troubleshooting
 
