@@ -227,7 +227,7 @@ To add a course:
 
 ## Google Search Console and indexing
 
-**Status, September 27, 2026:** Search Console setup still needs my Google account's verification tag and the account steps below. Ownership verification and an indexing request have not been completed.
+**Status, September 27, 2026:** The homepage now includes my Google Search Console verification tag. Keep that tag in `docs/index.html`. The remaining account steps are to click **Verify** in Search Console, inspect the homepage, request indexing, and submit `sitemap.xml`; their completion has not yet been confirmed.
 
 1. Sign in to [Google Search Console](https://search.google.com/search-console/) and add a **URL-prefix** property for `https://tuliecon.github.io/`.
 2. Choose **HTML tag** verification and copy the complete meta tag Google provides. Give that tag to the assistant to add inside `<head>` in `docs/index.html` and publish. Once it appears in the live homepage's source, return to Search Console and click **Verify**. Keep the tag in future versions of the homepage. [Google's ownership verification guide](https://support.google.com/webmasters/answer/9008080)
